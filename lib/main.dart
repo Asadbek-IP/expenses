@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 void main(List<String> args) {
   runApp(const Expenses());
@@ -14,8 +15,8 @@ class Expenses extends StatefulWidget {
 class _ExpensesState extends State<Expenses> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
+    return MaterialApp(
+      home: Scaffold(appBar: AppBar(title: Text('Harajatlar'),)),
     );
   }
 }
