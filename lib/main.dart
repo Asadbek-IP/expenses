@@ -60,7 +60,7 @@ class _ExpensesState extends State<Expenses> {
           children: [
             Container(
               child: const Card(
-                color: Colors.red,
+                color: Colors.green,
                 elevation: 5,
                 child: Text(
                   'Diagramma qismi',
