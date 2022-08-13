@@ -1,3 +1,4 @@
+import 'package:expenses/transaction.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -13,6 +14,33 @@ class Expenses extends StatefulWidget {
 }
 
 class _ExpensesState extends State<Expenses> {
+  List<Transaction> transactions = [
+    Transaction(
+      id: "123",
+      price: 200.0,
+      title: "Shim",
+      date: DateTime.now(),
+    ),
+    Transaction(
+      id: "124",
+      price: 100.0,
+      title: "Shapka",
+      date: DateTime.now(),
+    ),
+      Transaction(
+      id: "124",
+      price: 100.0,
+      title: "Shapka",
+      date: DateTime.now(),
+    ),
+      Transaction(
+      id: "124",
+      price: 100.0,
+      title: "Shapka",
+      date: DateTime.now(),
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,10 +51,7 @@ class _ExpensesState extends State<Expenses> {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children:  [
-            Container(
-              width: double.infinity,
-            ),
+          children: [
             Container(
               child: const Card(
                 color: Colors.red,
@@ -37,25 +62,49 @@ class _ExpensesState extends State<Expenses> {
                 ),
               ),
             ),
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child:   Card(
-                color: Colors.blue,
-                elevation: 5,
-                child: Container(
-                  margin: const EdgeInsets.all(10),
-                  child: const Text(
-                    'List Transtaction',
-                    style: TextStyle(fontSize: 20),
+            Column(
+              children: transactions.map((tr) {
+                return Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Card(
+                    color: Colors.blue,
+                    child: Container(
+                      margin: const EdgeInsets.all(10),
+                      child: Row(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.all(6),
+                            decoration: BoxDecoration(
+                              border: Border.all(width: 1.5, color: Colors.amberAccent),
+                            ),
+                            child: Text(
+                              tr.price.toString(),
+                              style: const TextStyle(fontSize: 16,color: Colors.amberAccent),
+                            ),
+                          ),
+                          SizedBox(width: 20,),
+                          Column(
+                            children: [
+                              Text(
+                                tr.title!,
+                                style: TextStyle(fontSize: 16),
+                              ),
+                              Text(
+                                tr.date.toString(),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
-                ),
-              ),
+                );
+              }).toList(),
             ),
-            
           ],
         ),
       ),
     );
   }
 }
+// expenses
