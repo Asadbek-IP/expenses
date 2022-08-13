@@ -63,7 +63,7 @@ class _ExpensesState extends State<Expenses> {
                 color: Colors.green,
                 elevation: 5,
                 child: Text(
-                  'Diagramma qismi',
+                  'Diagramma qis',
                   style: TextStyle(fontSize: 20),
                 ),
               ),
@@ -73,7 +73,7 @@ class _ExpensesState extends State<Expenses> {
                 return Container(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Card(
-                    color: Colors.blue,
+                    color: Colors.green,
                     child: Container(
                       margin: const EdgeInsets.all(10),
                       child: Row(
