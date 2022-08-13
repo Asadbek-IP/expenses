@@ -39,6 +39,12 @@ class _ExpensesState extends State<Expenses> {
       title: "Shapka",
       date: DateTime.now(),
     ),
+    Transaction(
+      id: "127",
+      price: 100.0,
+      title: "Shapka",
+      date: DateTime.now(),
+    ),
   ];
 
   @override
