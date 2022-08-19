@@ -1,9 +1,10 @@
+import 'package:expenses/columnexcample.dart';
 import 'package:expenses/transaction.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
-  runApp(const Expenses());
+  runApp(const ColumnExcample());
 }
 
 class Expenses extends StatefulWidget {
@@ -17,34 +18,41 @@ class _ExpensesState extends State<Expenses> {
   List<Transaction> transactions = [
     Transaction(
       id: "123",
-      price: 200.0,
+      price: 60000,
       title: "Shim",
       date: DateTime.now(),
     ),
     Transaction(
       id: "124",
-      price: 100.0,
+      price: 80000,
       title: "Shapka",
       date: DateTime.now(),
     ),
       Transaction(
       id: "124",
-      price: 100.0,
+      price: 50000,
       title: "Shapka",
       date: DateTime.now(),
     ),
       Transaction(
       id: "124",
-      price: 100.0,
+      price: 90000,
       title: "Shapka",
       date: DateTime.now(),
     ),
     Transaction(
       id: "127",
-      price: 100.0,
+      price: 20000,
       title: "Shapka",
       date: DateTime.now(),
     ),
+    Transaction(
+      id: "127",
+      price: 20000,
+      title: "Shapka",
+      date: DateTime.now(),
+    ),
+   
   ];
 
   @override
@@ -81,22 +89,32 @@ class _ExpensesState extends State<Expenses> {
                           Container(
                             padding: const EdgeInsets.all(6),
                             decoration: BoxDecoration(
-                              border: Border.all(width: 1.5, color: Colors.amberAccent),
+                              border: Border.all(width: 2.0, color:  Colors.purple),
+
                             ),
-                            child: Text(
-                              tr.price.toString(),
-                              style: const TextStyle(fontSize: 16,color: Colors.amberAccent),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Text(
+                                  tr.price.toString(),
+                                  style: const TextStyle(fontSize: 20,color: Colors.purple,fontWeight: FontWeight.bold),
+                                ),
+                                Text(" so'm",style: TextStyle(color:Colors.purple,fontSize: 13,fontWeight: FontWeight.w700),)
+                              ],
                             ),
                           ),
                           SizedBox(width: 20,),
                           Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 tr.title!,
-                                style: TextStyle(fontSize: 16),
+                                style: TextStyle(fontSize: 20,fontWeight: FontWeight.w700),
                               ),
+                              SizedBox(height: 5,),
                               Text(
-                                tr.date.toString(),
+                                tr.date.toString().substring(0,10),
+                                style: const TextStyle(color: Colors.white),
                               ),
                             ],
                           ),
