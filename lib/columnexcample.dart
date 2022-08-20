@@ -6,32 +6,42 @@ class ColumnExcample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Row(
+        body: SafeArea(
+            child: Column(
           children: [
-          Expanded(
-            child: Container(
-              margin: EdgeInsets.all(8),
-             height: double.infinity,
-              color: Colors.red,
+            Expanded(
+              flex: 1,
+              child: Container(
+                margin: EdgeInsets.all(10),
+                width: double.infinity,
+                color: Colors.black,
+              ),
             ),
-          ),
-          Expanded(
-            child: Container(
-              margin: EdgeInsets.all(8),
-             height: double.infinity,
-              color: Colors.blue,
-            ),
-          ),
-          Expanded(
-            flex: 2, 
-            child: Container(
-              margin: EdgeInsets.all(8),
-             height: double.infinity,
-              color: Colors.green,
-            ),
-          ),
-        ],),
+            Expanded(
+              flex: 3,
+              child: Row(
+                children: [
+                  Expanded(
+                    flex: 3,
+                    child: Container(
+                      margin: EdgeInsets.all(10),
+                      color: Colors.red,
+                    ),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: Container(
+                      margin: EdgeInsets.all(10),
+                      color: Colors.black,
+                    ),
+                  ),
+                ],
+              ),
+            )
+          ],
+        )),
       ),
     );
   }
