@@ -9,8 +9,10 @@ class TrnsactionList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 380,
+      height: 550,
       child: ListView.builder(
+        
+        physics: BouncingScrollPhysics(),
         itemCount: transactions.length,
           itemBuilder: ((context, index) => 
            Container(
