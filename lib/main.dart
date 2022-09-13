@@ -20,8 +20,8 @@ class MyApp extends StatelessWidget {
         appBarTheme: AppBarTheme(
           color: Colors.purple
         ),
-        accentColor: Colors.blue,
-        primarySwatch: Colors.purple
+    
+        primarySwatch: Colors.red
       ),
       home: Expenses(),
     );
@@ -36,26 +36,7 @@ class Expenses extends StatefulWidget {
 }
 
 class _ExpensesState extends State<Expenses> {
-  List<Transaction> transactions = [
-    Transaction(
-      id: "123",
-      price: 60000,
-      title: "Shim",
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: "124",
-      price: 80000,
-      title: "Shapka",
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: "124",
-      price: 50000,
-      title: "Shapka",
-      date: DateTime.now(),
-    ),
-  ];
+  List<Transaction> transactions = [];
   void _addTransaction(String name, double newprice) {
     setState(() {
       transactions.add(Transaction(

@@ -10,8 +10,10 @@ class TrnsactionList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 550,
-      child: ListView.builder(
+      child:transactions.isEmpty?Image(
         
+        image: AssetImage("assets/images/empty2.gif"),
+      ): ListView.builder(
         physics: BouncingScrollPhysics(),
         itemCount: transactions.length,
           itemBuilder: ((context, index) => 
