@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class TrnsactionList extends StatelessWidget {
-  List<Transaction> transactions;
+  List<Transaction> transactions=[];
    TrnsactionList({required this.transactions, Key? key }) : super(key: key);
 
   @override

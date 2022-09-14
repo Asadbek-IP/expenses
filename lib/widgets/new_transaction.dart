@@ -20,7 +20,7 @@ class _NewTransactionState extends State<NewTransaction> {
 
     mnController.clear();
     narxController.clear();
-
+ 
     Navigator.pop(context);
   }
 
