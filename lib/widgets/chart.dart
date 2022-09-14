@@ -15,13 +15,15 @@ class Chart extends StatelessWidget {
       num totalSum = 0.0;
         
       final weekDay = DateTime.now().subtract(Duration(days: index));
-      if (weekDay.day == recentTrList[index].date!.day &&
-          weekDay.month == recentTrList[index].date!.month &&
-          weekDay.year == recentTrList[index].date!.year) {
-        totalSum = totalSum + recentTrList[index].price!;
+      for(int i=0;i<recentTrList.length;i++){
+        if (weekDay.day == recentTrList[i].date!.day &&
+          weekDay.month == recentTrList[i].date!.month &&
+          weekDay.year == recentTrList[i].date!.year) {
+        totalSum = totalSum + recentTrList[i].price!;
+      }
       }
       return {
-        "date": DateFormat("E").format(weekDay).substring(0, 3),
+        "date": DateFormat("EEEE").format(weekDay).substring(0, 3),
         "amount": totalSum
       };
     });
