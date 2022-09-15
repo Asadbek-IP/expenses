@@ -1,12 +1,19 @@
 import 'package:expenses/model/transaction.dart';
+import 'package:expenses/widgets/chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/date_symbol_data_file.dart';
 import 'package:intl/intl.dart';
 
 import 'widgets/new_transaction.dart';
 import 'widgets/transaction_list.dart';
 
-void main(List<String> args) => runApp(MyApp());
+void main(List<String> args) {
+  
+   runApp(MyApp());
+   
+
+}
 
 
 class MyApp extends StatelessWidget {
@@ -78,16 +85,7 @@ class _ExpensesState extends State<Expenses> {
           //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Container(
-              child: const Card(
-                color: Colors.green,
-                elevation: 5,
-                child: Text(
-                  'Diagramma qis',
-                  style: TextStyle(fontSize: 20),
-                ),
-              ),
-            ),
+            Chart(recentTrList: transactions),
             TrnsactionList(transactions: transactions),
           ],
         ),
